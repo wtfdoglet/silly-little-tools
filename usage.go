@@ -7,10 +7,9 @@ import (
 	"syscall"
 )
 
-
 func main() {
 	var procAttr os.ProcAttr
-	procAttr.Files = []*os.File{ nil, os.Stdout, os.Stderr }
+	procAttr.Files = []*os.File{nil, os.Stdout, os.Stderr}
 	cmdh, err := os.StartProcess(os.Args[1], os.Args[1:], &procAttr)
 
 	if err != nil {
@@ -29,4 +28,3 @@ func main() {
 	fmt.Println(usage.(*syscall.Rusage).Majflt, "major faults")
 	fmt.Println(usage.(*syscall.Rusage).Nsignals, "signals delivered")
 }
-
