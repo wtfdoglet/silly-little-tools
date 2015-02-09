@@ -14,7 +14,7 @@ func main() {
 
 	if err != nil {
 		log.Fatal(err)
-		return
+		os.Exit(2)
 	}
 
 	status, err := cmdh.Wait()
